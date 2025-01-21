@@ -6,7 +6,7 @@
 
 ## Tu sitio web personalizado
 
-Tendrás un sitio web personalizado solo para ti en este curso. Una vez generado, lo podrás encontrar [aquí](https://jfupb.github.io/interactivos2-2025-10-interactivos2-template2025-10)
+Tendrás un sitio web personalizado solo para ti en este curso. Una vez generado, lo podrás encontrar [aquí](https://jfupb.github.io/interactivos2-JorgeLuisSuarique)
 
 ## Realización de actividades
 
