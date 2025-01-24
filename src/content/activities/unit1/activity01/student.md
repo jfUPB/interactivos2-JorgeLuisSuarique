@@ -7,10 +7,14 @@ https://www.ptc.com/en/technologies/cad/generative-design
 https://www.unir.net/revista/ingenieria/diseno-generativo/
 
 ## Arte generativo.
+El arte generativo se refiere a un arte que se crea total o parcialmente a través de un sistema autónomo. Este sistema puede ser independiente o no humano, capaz de determinar características que de otro modo serían decididas por el artista. El sistema generativo puede actuar como el creador o como un colaborador con el artista. El arte generativo a menudo se refiere a obras generadas algorítmicamente por computadoras, donde el sistema desempeña un papel significativo en el proceso de creación.
 https://www.freecodecamp.org/espanol/news/una-introduccion-al-arte-generativo-que-es-y-como-se-hace/
 https://www.bbc.com/mundo/noticias/2011/07/110728_tecnologia_arte_generativo_solaas_nc
+https://www.composition.gallery/ES/glosario/qu-es-el-arte-generativo/
 
 ## Cuadro comparativo.
+
+
 
 
 ## Parrafo
