@@ -25,10 +25,13 @@ const calcularEstadoUnidad = (actividades: Activity[],): {
             const completadas = actividades.filter(
                 (a) => a.estado === "Completada",
             ).length;
+            const en_progreso = actividades.filter(
+                (a) => a.estado === "En progreso",
+            ).length;
 
             if (completadas === total) {
                 return { estado: "Completada", variante: "success" };
-            } else if (completadas > 0) {
+            } else if (completadas > 0 || en_progreso > 0) {
                 return { estado: "En progreso", variante: "caution" };
             }
             return { estado: "No iniciada", variante: "note" };
