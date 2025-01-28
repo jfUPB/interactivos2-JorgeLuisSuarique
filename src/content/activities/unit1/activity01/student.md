@@ -18,10 +18,5 @@ https://www.composition.gallery/ES/glosario/qu-es-el-arte-generativo/
 
 
 ## Parrafo
+El diseñao generativo se refiere a la creacion automatizada o asistida por algoritmos que generan contenido dinámico, como niveles, personajes, paisajes o narrativas, basándose en un conjunto de reglas predefinidas y variables. Este enfoque permite una producción más eficiente y creativa, adaptándose en tiempo real a las decisiones del usuario o a condiciones específicas, lo que da lugar a experiencias únicas e inmersivas.
 
- ``` js
-algo
-{
-algo mas.
-}
- ```
