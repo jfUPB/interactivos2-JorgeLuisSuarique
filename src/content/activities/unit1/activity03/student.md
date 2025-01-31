@@ -9,7 +9,7 @@ Usando varias pantallas recrea una obra de arte generativo para murales exterior
 ### Obra2:SV15 @ Divco West
 Recreacion de circulos flotando emulando las burbujas de una lampara de lava usando generacion de particulas, dichas burbujas colicionan entresi deformandose lentamente creando una iluciuon mas obtima del liquido espeso de dichas lamparas.
 ### Influencias:
-su Influyencia compone una gran parte en la decoracion artista y arquitectonica tanto en interiorews como en exteriores.
+Utiliza algoritmos y técnicas de programación para crear obras que exploran la intersección entre el arte, la tecnología y la naturaleza. Su trabajo destaca por su estética minimalista y su capacidad para transformar datos complejos en formas visuales impactantes. Weißenberg ha influido en el arte generativo al demostrar cómo la tecnología puede ser una herramienta poderosa para la expresión artística, inspirando a otros artistas a explorar nuevas posibilidades creativas en el mundo digital.
 
 ## Artista 2: Manfred Mohr.
 Biografía breve: 
@@ -20,3 +20,4 @@ trabjo de arte 2D que recrear unas pinturas arrugados simetricamentes, basandose
 ### Obra2:
 Transit-Code hace referencia a mis muchos años escribiendo código en busca de la visualización de mis ideas artísticas. De todos los algoritmos que escribí, no todos tuvieron éxito y a menudo hubo que reescribirlos o, en ocasiones, abandonarlos porque no encontraba una solución visual satisfactoria. Rara vez borré mi código. Esporádicamente publicaré en este foro dibujos de algoritmos que había «abandonado» pero a los que volví y les di una segunda mirada. Mi experiencia artística me sirve de guía para encontrar nuevas soluciones para esas ideas originalmente poco claras. Pero de vez en cuando, tengo la tentación de intentar (como con P1682) obtener de una solución perfectamente aceptada más de una respuesta.
 ### Influencias:
+Manfred Mohr fue un pionero en el arte generativo, utilizando algoritmos y computadoras desde los años 60 para crear obras abstractas y geométricas. Su enfoque innovador demostró que la tecnología podía ser una herramienta creativa, inspirando a artistas digitales y expandiendo los límites del arte tradicional. Su trabajo sentó las bases para el arte generativo contemporáneo, donde la programación y la creatividad se fusionan.
