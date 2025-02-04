@@ -8,8 +8,19 @@ import unidades from '../../activities/unidades.json';
 
 export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
+## Introducción
+
+En esta unidad vas a reflexionar profundamente sobre el 
+método de diseño que usaremos en este curso. Se trata 
+del método [INPUT/OUTPUT](https://www.patrik-huebner.com/method/) 
+propuesto por el diseñador alemán [Patrik Hübner](https://www.patrik-huebner.com)
 
 ## ¿Qué aprenderás en esta unidad?
+
+En esta unidad indagarás profundamente el método input/output 
+de Patrik Hübner. Revisarás referentes, identificarás los 
+elementos que propone el método y propondrás tus propias 
+ideas.
 
 {unit.actividades
   .filter(act => act.fase === "set")
@@ -23,6 +34,9 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
 ## Investigación
 
+En esta fase, vas a analizar algunos referentes desde la 
+perspectiva del método input/output.
+
 {unit.actividades
   .filter(act => act.fase === "seek")
   .map(act => (
@@ -35,6 +49,10 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
 ## Aplicación
 
+En esta fase, vas a explorar creativamente el método 
+input/output definiendo posibles combinaciones entre inputs, 
+outputs y algoritmos generativos.
+
 {unit.actividades
   .filter(act => act.fase === "apply")
   .map(act => (
@@ -45,7 +63,11 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Consolidación y matacognión
+## Consolidación y metacognición
+
+En esta fase vas a revisar el camino recorrido, el proceso. Reflexionarás y reportarás 
+algunas conclusiones. Adicionalmente, observarás cómo ha sido tu proceso de aprendizaje 
+hasta este punto y pensarás posibles estrategias para mejorar.
 
 {unit.actividades
   .filter(act => act.fase === "reflect")
