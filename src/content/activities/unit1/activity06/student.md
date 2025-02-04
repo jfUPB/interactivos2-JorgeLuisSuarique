@@ -1,4 +1,4 @@
-# Actividad 5.
+# Actividad 6.
 ##  p5.js
 ### Descripción.
 p5.js es una biblioteca de JavaScript diseñada para hacer que la programación creativa sea accesible para artistas, diseñadores y principiantes. Está basada en Processing y se enfoca en la simplicidad y la facilidad de uso. Sus características principales incluyen:
