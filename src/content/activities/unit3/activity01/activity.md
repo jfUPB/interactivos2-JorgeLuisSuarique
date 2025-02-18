@@ -3,7 +3,8 @@
 **Enunciado**: en esta actividad vas a analizar la arquitectura de la 
 aplicación que está en [este sitio repositorio](https://github.com/juanferfranco/sfiSocketioDesktopMobile).
 
-Esta actividad será grupal. Vamos a recorrer lentamente el código de la aplicación y a construir un diagrama de la arquitectura de la aplicación.
+Esta actividad será grupal. Vamos a recorrer lentamente el código de la aplicación y a construir un diagrama de la arquitectura de la aplicación. La grabación de la sesión quedó 
+[aquí](https://youtu.be/FhBKSz5T-lU). 
 
 Te pediré que no tomes notas, que te concentres en la explicación y que hagas preguntas si algo no te queda claro.
 
