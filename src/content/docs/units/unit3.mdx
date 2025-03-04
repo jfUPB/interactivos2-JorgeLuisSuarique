@@ -8,8 +8,20 @@ import unidades from '../../activities/unidades.json';
 
 export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
+## Introducción
+
+En esta unidad vas a repasar algunos técnicas de implementación de 
+sistemas físicos interactivos 1 que te permitirán implementar la 
+experiencia interactiva del curso. Además, vas a profundizar en el 
+funcionamiento de las aplicaciones y en los conceptos que sustentan 
+este funcionamiento. Finalmente, verás cómo depurar posibles problemas 
+que se presenten al poner en funcionamiento las aplicaciones.
 
 ## ¿Qué aprenderás en esta unidad?
+
+En esta fase, recordarás los conceptos básicos necesarios 
+para implementar la aplicación interactiva en tiempo real 
+de este curso.
 
 {unit.actividades
   .filter(act => act.fase === "set")
@@ -23,6 +35,10 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
 ## Investigación
 
+En esta fase, vas a experimentar y ganar confianza con las herramientas 
+que te permitirás implementar y depurar el tipo de aplicaciones 
+interactivas en tiempo real que desarrollarás en el curso.
+
 {unit.actividades
   .filter(act => act.fase === "seek")
   .map(act => (
@@ -35,6 +51,10 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
 ## Aplicación
 
+En esta fase, vas a poner a prueba los conceptos que repasaste y 
+profundizaste. Te voy a proponer un problema y la idea es que lo 
+resuelvas usando lo aprendido en la fase de investigación.
+
 {unit.actividades
   .filter(act => act.fase === "apply")
   .map(act => (
@@ -45,7 +65,10 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Consolidación y matacognión
+## Consolidación y metacognición
+
+En esta fase, vas a reflexionar acerca de lo que aprendiste 
+en la unidad y cómo lo aprendiste.
 
 {unit.actividades
   .filter(act => act.fase === "reflect")
