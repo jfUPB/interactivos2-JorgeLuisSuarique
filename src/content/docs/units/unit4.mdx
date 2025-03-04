@@ -8,8 +8,22 @@ import unidades from '../../activities/unidades.json';
 
 export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
+## Introducción
+
+En esta unidad vas a incrementar las herramientas de tu caja de herramientas para 
+abordar el proyecto de curso. En la unidad anterior aprendiste a conectar 
+aplicaciones mediante el uso de un servidor y websockets (socket.io). Ahora, 
+llevarás esto a un siguiente nivel mediante un nuevo protocolo: webRTC. 
+Este protocolo te permitirá conectar dos o más clientes directamente y compartir en tiempo 
+real audio, video, datos e incluso el canvas.
 
 ## ¿Qué aprenderás en esta unidad?
+
+En esta unidad vas a explorar el protocolo de comunicación webRTC. Este protocolo 
+te permitirá construir experiencias interactivas con el potencial de compartir audio, video, 
+datos y el canvas de varios clientes o aplicaciones distribuidas y en tiempo real. Recuerda 
+que es posible que el diseño de tu experiencia para el evento en vivo requiera esta 
+característica.
 
 {unit.actividades
   .filter(act => act.fase === "set")
@@ -23,6 +37,8 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
 ## Investigación
 
+Vas a experimentar con la biblioteca p5LiveMedia y explorar sus posibilidades.
+
 {unit.actividades
   .filter(act => act.fase === "seek")
   .map(act => (
@@ -35,6 +51,9 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
 ## Aplicación
 
+En esta fase, vas a transferir lo aprendido en la exploración de la biblioteca 
+p5LiveMedia diseñando e implementando una aplicación que haga uso de la misma.
+
 {unit.actividades
   .filter(act => act.fase === "apply")
   .map(act => (
@@ -46,6 +65,9 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
 }
 
 ## Consolidación y metacognición
+
+Finalmente, vas a indagar un poco más acerca del protocolo webRTC y reflexionar 
+sobre lo aprendido en esta unidad.
 
 {unit.actividades
   .filter(act => act.fase === "reflect")
