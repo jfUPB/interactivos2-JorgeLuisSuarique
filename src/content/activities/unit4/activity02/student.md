@@ -84,11 +84,16 @@ function draw() {
 ```
 
 ## Hallazgos y Consideraciones para Implementar p5LiveMedia
-### Requiere conexión segura (HTTPS)
-WebRTC solo funciona en HTTPS o en localhost. Si se usa en un servidor público, debe ser sobre un dominio seguro.
-### Sincronización de datos
-Cuando se comparten datos personalizados, se recomienda serializarlos en JSON para garantizar compatibilidad entre clientes.
-### Gestión de múltiples conexiones
-Para evitar problemas con múltiples clientes, es clave administrar los IDs de conexión correctamente y limpiar conexiones cuando se desconectan usuarios.
-### Optimización del rendimiento
-En aplicaciones que manejan muchos streams, es importante optimizar la resolución de video y la tasa de datos para evitar lag o saturación.
+### Funcionalidad principal.
+p5LiveMedia es una biblioteca para compartir audio, video y datos en tiempo real entre múltiples clientes utilizando WebRTC.
+Permite sincronizar y transmitir datos personalizados, lo que facilita la creación de experiencias interactivas colaborativas.
+### Compatibilidad con p5.js.
+Se integra con p5.js, lo que permite manejar elementos gráficos, datos y medios de manera sencilla.
+Ideal para aplicaciones de arte generativo y sistemas interactivos en red.
+### Requerimientos técnicos
+WebRTC solo funciona en conexiones HTTPS o en localhost.
+La biblioteca requiere una configuración de servidor para gestionar las conexiones.
+### Capacidades exploradas
+Transmisión de video: Se pueden compartir cámaras en tiempo real.
+Intercambio de datos personalizados: Se pueden enviar y recibir datos JSON entre clientes.
+Sincronización del canvas: Permite que los elementos gráficos de una aplicación sean visibles en múltiples dispositivos al mismo tiempo.
