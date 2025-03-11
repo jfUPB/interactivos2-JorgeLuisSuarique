@@ -8,8 +8,22 @@ import unidades from '../../activities/unidades.json';
 
 export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
+## Introducción 📜
 
-## ¿Qué aprenderás en esta unidad?
+📌 Has llegado a la segunda parte del curso. En la primera parte exploraste:
+
+- Referentes de arte y diseño generativo.
+- El método de diseño input-procesamiento-output.
+- Herramientas de programación creativa.
+- Procolos de comunicación en tiempo real: WebSockets y WebRTC.
+
+📌 Con todos estos elementos, ahora estás listo para comenzar el proyecto de curso. 
+A este proyecto le dedicarás desde las próximas semanas hasta el final.
+
+## ¿Qué aprenderás en esta unidad? 💡
+
+En esta unidad, vas a definir el concepto, la narrativa y un diseño preliminar de 
+tu proyecto de curso. 
 
 {unit.actividades
   .filter(act => act.fase === "set")
@@ -21,7 +35,9 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Investigación
+## Investigación 🔎
+
+En esta fase, vas a focalizarte en la investigación para tu proyecto.
 
 {unit.actividades
   .filter(act => act.fase === "seek")
@@ -33,7 +49,10 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Aplicación
+## Aplicación 🛠
+
+En esta fase vas a concretar en una propuesta tu **IDEA** para 
+el proyecto de curso.
 
 {unit.actividades
   .filter(act => act.fase === "apply")
@@ -45,7 +64,10 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Consolidación y metacognición
+## Consolidación y metacognición 🤔
+
+En esta fase vas a consolidar tu propuesta, autoevaluar tu proceso y proponer 
+mejoras para futuras versiones del curso.
 
 {unit.actividades
   .filter(act => act.fase === "reflect")
