@@ -741,8 +741,113 @@ class SimplePeerWrapper {
 
 ## Comunicación en red con WebRTC (p5LiveMedia).
 ```js
-let receivedParticles = [];
+let myVideo;
+let fft;
+let mic;
+let p5lm;
+let particles = [];
+let receivedParticles = []; // Se usa para almacenar partículas recibidas
 
+function setup() {
+  createCanvas(800, 400);
+  background(0);
+
+  startButton = createButton("Iniciar Audio/Video");
+  startButton.position(10, 10);
+  startButton.mousePressed(startAudioVideo);
+
+  // Iniciar conexión con p5LiveMedia
+  p5lm = new p5LiveMedia(this, "DATA", null, "NotasMusicales");
+  p5lm.on("data", gotData);
+}
+
+function startAudioVideo() {
+  userStartAudio().then(() => {
+    mic = new p5.AudioIn();
+    mic.start();
+    fft = new p5.FFT();
+    fft.setInput(mic);
+
+    myVideo = createCapture(VIDEO);
+    myVideo.size(width / 2, height);
+    myVideo.hide();
+
+    startButton.hide();
+
+    // Crear la conexión p5LiveMedia después de iniciar el audio/video
+    p5lm = new p5LiveMedia(this, "DATA", null, "NotasMusicales");
+    p5lm.on("data", gotData);
+    p5lm.on("stream", gotStream);
+  });
+}
+
+function draw() {
+  background(0);
+
+  if (myVideo) {
+    image(myVideo, 0, 0, width / 2, height);
+  }
+
+  if (fft) {
+    let spectrum = fft.analyze();
+    let maxFreq = 0;
+    let maxAmplitude = 0;
+
+    for (let i = 0; i < spectrum.length; i++) {
+      if (spectrum[i] > maxAmplitude) {
+        maxAmplitude = spectrum[i];
+        maxFreq = i;
+      }
+    }
+
+    if (maxAmplitude > 180) {
+      let color = [random(255), random(255), random(255)];
+      let startX = width * 3 / 4; // Ahora las partículas inician en la mitad derecha
+      let startY = height / 2;
+
+      let particle = new Particle(startX, startY, maxFreq, color);
+      particles.push(particle);
+
+      let data = {
+        x: startX,
+        y: startY,
+        freq: maxFreq,
+        color: color
+      };
+      p5lm.send(JSON.stringify(data)); // Enviar la info a otros usuarios
+    }
+  }
+
+  // Dibujar partículas propias
+  for (let i = particles.length - 1; i >= 0; i--) {
+    particles[i].update();
+    particles[i].display();
+    if (particles[i].isDead()) {
+      particles.splice(i, 1);
+    }
+  }
+
+  // Dibujar partículas recibidas de otros usuarios
+  for (let i = receivedParticles.length - 1; i >= 0; i--) {
+    receivedParticles[i].update();
+    receivedParticles[i].display();
+    if (receivedParticles[i].isDead()) {
+      receivedParticles.splice(i, 1);
+    }
+  }
+}
+
+// Función para recibir datos de otros usuarios
+function gotData(data, id) {
+  let received = JSON.parse(data);
+  let startX = received.x; // Recibimos la posición original
+  let startY = received.y;
+
+  let newParticle = new Particle(startX, startY, received.freq, received.color);
+  receivedParticles.push(newParticle);
+}
+
+// Manejo del video remoto de otros usuarios
 function gotStream(stream, id) {
   let otherVideo = createVideo();
   otherVideo.elt.srcObject = stream;
@@ -752,11 +857,31 @@ function gotStream(stream, id) {
   otherVideo.play();
 }
 
-p5lm.on('data', gotData);
+// Clase de Partículas
+class Particle {
+  constructor(x, y, freq, color) {
+    this.x = x;
+    this.y = y;
+    this.freq = freq;
+    this.size = map(freq, 10, 1024, 10, 50);
+    this.color = color;
+    this.lifespan = 255;
+  }
 
-function gotData(data, id) {
-  let received = JSON.parse(data);
-  receivedParticles.push(new Particle(width / 2 + random(-50, 50), height / 2, received.freq));
+  update() {
+    this.y -= 2; // Hace que la partícula suba
+    this.lifespan -= 4;
+  }
+
+  display() {
+    fill(this.color[0], this.color[1], this.color[2], this.lifespan);
+    noStroke();
+    ellipse(this.x, this.y, this.size);
+  }
+
+  isDead() {
+    return this.lifespan <= 0;
+  }
 }
 ```
 ## Personalización del usuario.
