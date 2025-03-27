@@ -1,0 +1,8 @@
+# Actividad 6.
+En general, esta unidad fue interesante y desafiante. Me permitió explorar el uso de p5LiveMedia y la intercomunicación entre clientes, lo cual considero una habilidad muy valiosa para el desarrollo de aplicaciones interactivas en tiempo real. Además, trabajar con WebRTC y la sincronización de datos fue un reto que me ayudó a mejorar mis habilidades en programación multimedia y depuración de errores.
+
+Uno de los aspectos que más disfruté fue la posibilidad de crear proyectos interactivos con audio, video y transmisión de datos, ya que esto abre muchas posibilidades creativas en el desarrollo de interfaces dinámicas. Sin embargo, también encontré dificultades, especialmente en la integración y estabilidad de la comunicación entre clientes.
+
+Considero que la unidad podría mejorar en ciertos aspectos. La documentación sobre p5LiveMedia es limitada, lo que hace que el proceso de aprendizaje sea más complejo. Contar con más ejemplos prácticos y tutoriales detallados facilitaría mucho la comprensión de esta herramienta. También encontré que la explicación sobre WebRTC y la transmisión de datos en tiempo real podría ser más clara, ya que es un tema técnico que puede resultar confuso sin una base teórica bien estructurada y ejercicios guiados.
+
+Me habría gustado realizar más actividades prácticas y guiadas antes de enfrentarme a proyectos más complejos. Muchas veces el aprendizaje se basó en prueba y error, lo que hizo que algunas tareas fueran más difíciles de lo esperado. Tener sesiones enfocadas en la resolución de problemas y depuración de errores en WebRTC y p5LiveMedia habría sido de gran ayuda, ya que algunos fallos no eran fáciles de solucionar sin recurrir a documentación externa.
