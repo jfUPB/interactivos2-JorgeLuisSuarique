@@ -1,6 +1,6 @@
 # Actividad 5
 ## ¿Qué tan claro tienes el concepto de tu proyecto de curso?
-La noción de mi proyecto sí está clara: se trata de dar una experiencia interactiva a conciertos instrumentales en que los usuarios pueden ver partículas generadas en tiempo real dependiendo de las notas y manipular sus características desde sus teléfonos o tabletas. La idea clave está clara y bien estructurada, pero todavía tengo margen para mejorar en la forma de expresarla de forma más sencilla y efectiva.
+La noción de mi proyecto sí está clara: se trata de dar una experiencia interactiva a conciertos en bares pequeños, cuyo genero musical sea en mayormente instrumental y sus canciones sean armonicamente inmersivas en que los usuarios pueden ver partículas generadas en tiempo real dependiendo de las notas (se usan particulas ya que su diseño y dinamica puede ser visualmente agradable al publico) y manipular sus características desde sus teléfonos o tabletas. La idea clave está clara y bien estructurada, pero todavía tengo margen para mejorar en la forma de expresarla de forma más sencilla y efectiva.
 
 ## ¿Qué tan clara es la narrativa de tu proyecto de curso?
 La narrativa se basa en la conexión emocional entre la música y la visualización en tiempo real. La interacción del usuario con las partículas refuerza la experiencia inmersiva del concierto, haciendo que se sienta parte de la interpretación musical. Aunque el concepto es sólido, puedo mejorar en la forma de presentar esta narrativa para que sea más atractiva y fácil de entender para cualquier público.
