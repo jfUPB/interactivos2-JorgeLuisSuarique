@@ -5,11 +5,40 @@ unitId: unit7
 
 import ActivityPlaceholder from '../../../components/ActivityPlaceholder.astro';
 import unidades from '../../activities/unidades.json';
+import { Aside} from '@astrojs/starlight/components';
+
 
 export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
+## Introducción 📜
+<Aside type="note" title="Del diseño al código">
+¡Llegó el momento de dar vida a tu diseño! En la Unidad 6, creaste el **blueprint algorítmico** 
+detallado de tu pieza de arte generativo interactivo, siguiendo el método input-process-output 
+(IPO). Ahora, en la Unidad 7, traduciremos ese diseño conceptual en un **prototipo funcional**.
 
-## ¿Qué aprenderás en esta unidad?
+Esta unidad se centra en la **implementación técnica**. Utilizarás tus conocimientos de p5.js, 
+la posible comunicación en red (Node.js/Socket.IO o WebRTC si tu diseño lo requiere) y las 
+estrategias de simulación que planificaste, para construir la lógica generativa, conectar 
+las entradas (reales o simuladas) y generar las salidas visuales o sonoras que definiste. 
+Prepárate para programar, probar, depurar y refinar hasta que tu visión algorítmica tome 
+forma en la pantalla. ¡Manos al código!
+</Aside>
+
+## ¿Qué aprenderás en esta unidad? 💡
+
+<Aside type="tip" title="Objetivos de aprendizaje">
+Al finalizar esta unidad, serás capaz de:
+- Implementar en código (principalmente p5.js, y opcionalmente Node.js/Express/Socket.IO o WebRTC) el 
+algoritmo generativo diseñado en la Unidad 6.
+- Configurar y ejecutar la estructura básica del proyecto (cliente/s, servidor si aplica).
+- Implementar la simulación de datos planificada para probar eficazmente el algoritmo.
+- Codificar la lógica central del "proceso" generativo definido en tu blueprint.
+- Integrar los "inputs" (reales o simulados) para que influyan dinámicamente en el proceso.
+- Generar los "outputs" visuales o sonoros especificados en el diseño.
+- Utilizar técnicas básicas de depuración para identificar y solucionar errores en el código.
+- Refinar el comportamiento del prototipo funcional basándose en pruebas y en el diseño original.
+- Organizar y comentar tu código de forma clara y comprensible.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "set")
@@ -21,7 +50,12 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Investigación
+## Investigación 🔎
+
+<Aside type="note" title="Construyendo los cimientos">
+Antes de integrar todo, construiremos las partes fundamentales: la estructura del proyecto, 
+la lógica central del algoritmo y la simulación de datos necesaria para las pruebas iniciales.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "seek")
@@ -33,7 +67,13 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Aplicación
+## Aplicación 🛠
+
+<Aside type="note" title="Integrando y refinando">
+Con las bases listas, conectaremos todas las piezas del flujo IPO en el código y 
+dedicaremos tiempo a probar, depurar y ajustar el comportamiento hasta lograr un 
+prototipo funcional coherente con tu diseño.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "apply")
@@ -45,7 +85,13 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Consolidación y metacognición
+## Consolidación y metacognición 🤔
+
+<Aside type="note" title="Revisando el código y preparando la documentación">
+Has implementado tu prototipo. Ahora es momento de revisar la calidad del código, 
+reflexionar sobre el proceso de desarrollo y prepararnos para la última etapa: 
+la documentación final en la Unidad 8.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "reflect")

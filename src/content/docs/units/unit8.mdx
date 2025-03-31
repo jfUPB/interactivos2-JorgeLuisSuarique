@@ -5,11 +5,39 @@ unitId: unit8
 
 import ActivityPlaceholder from '../../../components/ActivityPlaceholder.astro';
 import unidades from '../../activities/unidades.json';
+import { Aside} from '@astrojs/starlight/components';
+
 
 export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
+## Introducción 📜
+<Aside type="note" title="Presentando tu creación y reflexionando sobre el viaje">
 
-## ¿Qué aprenderás en esta unidad?
+Has recorrido un camino fascinante desde los conceptos iniciales del diseño
+ generativo y el método IPO, pasando por 
+la exploración de tecnologías de comunicación en tiempo real, hasta el diseño y la 
+implementación de tu propio prototipo interactivo.
+
+En esta Unidad 8, nos centraremos en dos aspectos cruciales: **documentar tu proyecto** de 
+una manera clara y profesional, simulando una entrada para tu portafolio personal, 
+y **reflexionar sobre tu experiencia de aprendizaje** a lo largo de todo el curso. 
+Comunicar eficazmente tu trabajo y proceso es una habilidad tan importante como la 
+creación misma. Además, tu feedback honesto sobre el curso me ayudará a mejorarlo para 
+futuras cohortes.
+</Aside>
+
+## ¿Qué aprenderás en esta unidad? 💡
+
+<Aside type="tip" title="Objetivos de aprendizaje">
+Al finalizar esta unidad, serás capaz de:
+- Estructurar y redactar una documentación de proyecto clara y concisa, adecuada para un portafolio.
+- Explicar eficazmente el concepto, la narrativa y el diseño técnico (basado en IPO) de tu proyecto.
+- Crear y embeber un video demo que muestre el funcionamiento interactivo y generativo de tu prototipo.
+- Escribir un tutorial detallado que permita a otros reproducir tu proyecto.
+- Consolidar y revisar la documentación final para asegurar su calidad y completitud.
+- Reflexionar críticamente sobre tu proceso de aprendizaje personal a lo largo del curso.
+- Proporcionar feedback constructivo y específico para la mejora futura del curso basado en tu propia experiencia.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "set")
@@ -21,7 +49,12 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Investigación
+## Investigación 🔎
+
+<Aside type="note" title="Planificando y creando los componentes clave">
+Antes de escribir la documentación final, planificaremos su estructura y crearemos 
+los elementos multimedia esenciales, como el video demo.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "seek")
@@ -33,7 +66,12 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Aplicación
+## Aplicación 🛠
+
+<Aside type="note" title="Redactando la documentación">
+Es hora de escribir. Redactaremos las secciones principales de tu entrada de portafolio: 
+la descripción conceptual y técnica, y el tutorial de reproducción.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "apply")
@@ -45,7 +83,13 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Consolidación y metacognición
+## Consolidación y metacognición 🤔
+
+<Aside type="note" title="Revisión final, feedback y cierre">
+Ensamblaremos y revisaremos la documentación completa. Luego, te tomarás un tiempo 
+para reflexionar sobre tu experiencia global en el curso y ofrecer feedback valioso. 
+Finalmente, cerraremos nuestro viaje de aprendizaje.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "reflect")
