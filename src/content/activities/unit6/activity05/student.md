@@ -5,7 +5,7 @@
 
 ## 1. Resumen del Concepto y Narrativa
 
-Una experiencia visual generativa inspirada en la música céltica, donde cada nota crea partículas animadas y el público puede interactuar en tiempo real desde sus dispositivos móviles, influyendo en la estética de la presentación en vivo.
+Una experiencia visual generativa inspirada en la música céltica, donde cada nota crea partículas ilustradas (posiblemente animadas) y el público puede interactuar en tiempo real desde sus dispositivos móviles, influyendo en la estética de la presentación en vivo.
 
 ---
 
