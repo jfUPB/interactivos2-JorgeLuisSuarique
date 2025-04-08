@@ -18,7 +18,7 @@ De acuerdo con el flujo IPO, los siguientes inputs requerirán simulación:
 
 | Input                        | Método | Detalles |
 |-----------------------------|--------|----------|
-| **Movimiento del usuario**  | `noise()` | Generar valores suaves y fluctuantes para X, Y, Z entre -10 y 10. Usaré un incremento (`t += 0.01`) para mantener la continuidad del movimiento. Ejemplo: `let x = noise(t) * 20 - 10` |
+| **Movimiento del usuario**  | `noise()` | Generar valores suaves y fluctuantes para X y Y entre -10 y 10. Usaré un incremento (`t += 0.01`) para mantener la continuidad del movimiento. Ejemplo: `let x = noise(t) * 20 - 10` |
 | **Intensidad del sonido**   | `random()` + picos esporádicos | Rango entre 30 y 80 dB como base, con picos simulados ocasionales entre 80 y 100. Ejemplo: `let intensidad = random(30, 80); if (frameCount % 60 === 0) intensidad = random(80, 100);` |
 
 ---
