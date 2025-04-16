@@ -1,0 +1,3 @@
+# Actividad 4.
+## Síntesis del Proyecto 
+Mi proyecto es una experiencia interactiva para conciertos en bares en vivo, donde la música se visualiza en tiempo real mediante partículas generadas por cada nota de una cancion cuya letra y armonia se permite experimentar de manera inmersiva. Los usuarios, desde sus dispositivos móviles, pueden modificar el color y tamaño de estas partículas, creando una conexión entre sonido, imagen e interacción. La narrativa se basa en la emoción de ver la música cobrar vida, permitiendo una inmersión más profunda en la cancion. Utilizando tecnologías web y comunicación en red, la experiencia integra múltiples dispositivos para capturar la esencia del evento y ofrecer una interacción en vivo dinámica y envolvente.
