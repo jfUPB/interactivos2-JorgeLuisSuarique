@@ -1,54 +1,89 @@
 # Actividad 2
 
-**Diseño del Flujo IPO de la Experiencia Generativa**
 
----
+## INPUTS
 
-## **1. Inputs (Entradas)**
+| Fuente                     | Tipo de dato       | Rango/Formato        | ¿Simulado? | Conexión con Storytelling |
+|---------------------------|--------------------|----------------------|------------|----------------------------|
+| Audio de la canción (micrófono o archivo) | Numérico (amplitud, frecuencia) | Amplitud: 0.0–1.0 / Frecuencia: Hz | No         | La energía y estructura rítmica de la canción guía la evolución visual de la narrativa. |
+| Interacciones del público desde celulares (toques y sliders) | Texto, numérico | Color: "rojo"/"verde"/... <br> Tamaño: 1–10 | No         | Las decisiones del público influyen directamente en los atributos visuales de las partículas, haciéndolos partícipes activos de la escena. |
+| Control remoto de "ruleta" desde un tercer dispositivo (tablet o laptop) | Numérico/booleano | Índices de grupo: 0,1 / Activado: true/false | No         | Activa o desactiva la participación de grupos en distintos momentos, generando una dinámica narrativa por turnos y control del foco participativo. |
 
-| Fuente                | Tipo de dato   | Rango/Formato | Simulación? | Conexión con Storytelling |
-|----------------------|---------------|--------------|-------------|-------------------------|
-| Audio en vivo (música) | Frecuencia/Amplitud | 20Hz - 20kHz | No | Representa la base de la experiencia visual. |
-| Interacción del usuario | Color/Selección | "Rojo", "Azul"... | No | Permite personalización visual de la experiencia. |
-| Movimiento del usuario (acelerómetro/giroscopio) | Coordenadas | X, Y, Z (-10 a 10) | Opcional | Influye en el desplazamiento de las partículas. |
-| Tiempo de la canción | Número (segundos) | 0 - Duración total | No | Controla la evolución de la experiencia en el tiempo. |
-| Intensidad del sonido | Amplitud (dB) | 0 - 100 | No | Afecta el tamaño y la velocidad de las partículas. |
+## PROCESS
 
----
+### Descripción textual del algoritmo
 
-## **2. Process (Proceso/Algoritmo)**
+1. **Análisis del audio**  
+   Se utiliza la librería de análisis de sonido para extraer en tiempo real:
+   - Picos de amplitud → aumentan la intensidad de las partículas.
+   - Frecuencia dominante → influye en el tipo de figura generada (más baja = formas naturales, más alta = formas geométricas celtas).
+   - Cambios rítmicos → activan transiciones visuales suaves o bruscas.
 
-### **Descripción Textual**
-1. Se recibe el audio en vivo y se analiza su frecuencia y amplitud en tiempo real.
-2. Se generan partículas visuales que responden a los datos del sonido.
-3. El usuario puede modificar la paleta de colores y el tamaño de las partículas desde su dispositivo.
-4. Si el usuario mueve su dispositivo, las partículas responden con desplazamiento en pantalla.
-5. La intensidad del sonido cambia la velocidad y la cantidad de partículas generadas.
-6. Durante la canción, la evolución de los elementos visuales sigue un flujo narrativo inspirado en el ritmo y la temática céltica.
+2. **Interacción del público**  
+   - Cada celular envía datos de color y tamaño seleccionados.
+   - Estos datos se aplican a una fracción del sistema de partículas que el público puede controlar visualmente en tiempo real.
+   - Las decisiones individuales se mezclan en un promedio colectivo o se asignan por grupos.
 
-### **Pseudocódigo Simple**
+3. **Control de ruleta (tercer dispositivo)**  
+   - Un algoritmo simple selecciona qué grupo tiene permiso para influir en la visualización.
+   - Se alterna entre grupos cada cierto tiempo o según el progreso de la canción.
+   - El grupo activo tiene mayor impacto en los atributos de la visualización; el grupo pasivo solo observa.
+
+4. **Generación de partículas y visualización**  
+   - El sistema genera partículas que se mueven según algoritmos de física básica (fuerzas, atracción, repulsión).
+   - Los atributos de las partículas (color, tamaño, forma, agrupación) cambian con base en los inputs anteriores.
+
+### Pseudocódigo simplificado
+
+```pseudo
+SI grupo_1_activo == true ENTONCES
+    aplicar_inputs(grupo_1)
+SINO
+    aplicar_inputs(grupo_2)
+
+SI amplitud_audio > umbral ENTONCES
+    aumentar_intensidad_visual()
+
+SI frecuencia_audio < 300Hz ENTONCES
+    generar_formas_naturales()
+SINO
+    generar_formas_celtas()
+
+actualizar_visuales(color, tamaño, ritmo)
 ```
-SI amplitud_sonido > umbral
-   GENERAR particulas con tamaño proporcional a amplitud
-   ASIGNAR color según selección de usuario
-   SI usuario mueve el dispositivo
-      MODIFICAR trayectoria de partículas
-   SI tiempo_canción > umbral
-      ALTERAR patrones visuales según fase de la música
-FIN SI
-```
+
+### Generatividad y respuesta en tiempo real
+
+- El sistema no repite patrones exactos: las partículas tienen un grado de aleatoriedad en su posición y comportamiento.
+- Cada visualización es única por la combinación de audio e intervención del público.
+- Las decisiones del tercer dispositivo (ruleta) introducen momentos impredecibles y dan ritmo a la participación grupal.
+
+### Conexión con el storytelling
+
+- La experiencia se construye como un viaje colectivo.
+- Los visuales crecen en complejidad con la música y la energía del público.
+- La ruleta crea momentos de protagonismo para distintos grupos, generando tensión, pausa y sorpresa.
 
 ---
 
-## **3. Outputs (Salidas)**
+## OUTPUTS
 
-| Tipo        | Elementos Generados | Propiedades Dinámicas | Relación Input -> Output | Conexión Storytelling |
-|------------|--------------------|----------------------|-------------------------|-------------------------|
-| Visual     | Partículas animadas | Tamaño, color, velocidad, dirección | Sonido y usuario modifican partículas en tiempo real | La visualización se adapta a la canción y a la interacción del público. |
-| Experiencia | Reacción en vivo | Respuesta en milisegundos | Input musical genera respuestas visuales | La interacción hace sentir a los asistentes parte del espectáculo. |
+| Tipo          | Elementos generados                      | Propiedades dinámicas                                       |
+|---------------|------------------------------------------|--------------------------------------------------------------|
+| Visual        | Partículas animadas                      | Color, tamaño, trayectoria, forma, agrupación, intensidad     |
+| Escena completa | Paisaje generativo evolutivo            | Cambios de fondo, estructura visual según inputs             |
+| Participación | Efecto de visibilidad de grupo activo    | Aumenta visibilidad del grupo activo, baja la del pasivo     |
 
----
+### Relación Input → Process → Output
 
-## **4. Storytelling (Conexión con la Narrativa)**
-La experiencia transporta al espectador a un universo visual inspirado en la música céltica, donde cada nota genera un rastro de energía vibrante en pantalla. La audiencia no solo observa, sino que moldea activamente la atmósfera con sus interacciones, convirtiendo cada presentación en un evento único e irrepetible. Este flujo generativo refuerza la conexión entre los músicos, el público y la propia esencia de la canción.
+- **Frecuencia del audio** → Cambia el tipo de figura generada (natural vs. celta).
+- **Amplitud del audio** → Aumenta la energía del movimiento de partículas.
+- **Color y tamaño desde celulares** → Se aplican directamente a una porción de partículas.
+- **Grupo activo (ruleta)** → Controla qué conjunto de usuarios tiene impacto en el sistema visual.
 
+### Cómo los outputs manifiestan el storytelling
+
+- Las visualizaciones actúan como una expansión visual de la canción en vivo.
+- Las formas y movimientos de las partículas reflejan la intensidad y carácter de la música.
+- La participación del público transforma la obra en una creación colectiva.
+- La ruleta crea un vaivén narrativo de control y expectativa, aportando estructura dramática.
