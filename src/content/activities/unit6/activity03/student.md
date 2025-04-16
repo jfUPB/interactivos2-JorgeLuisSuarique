@@ -1,26 +1,66 @@
 # Actividad 3.
-**Exploración Conceptual del Diseño IPO**
 
-### 1. Inputs Extremos
-**Escenario:** ¿Qué sucede si los inputs alcanzan sus valores máximos o mínimos?
-- **Ejemplo:** El volumen de la música alcanza el nivel máximo, o el usuario elige el color más brillante y el tamaño más grande de las partículas.
-- **Comportamiento esperado:** Las partículas se multiplicarán en la pantalla y crecerán hasta su tamaño límite. Si el volumen es máximo, podría haber una saturación visual.
-- **Reflexión:** Para evitar saturación, se podría implementar un sistema de auto-regulación que evite la superposición excesiva de partículas o un umbral de control para evitar que los efectos sean demasiado intensos.
+## 1. Inputs extremos
 
-### 2. Cambio de Parámetro Interno
-**Escenario:** ¿Qué pasa si se modifica drásticamente una regla o parámetro interno?
-- **Ejemplo:** Se duplica la velocidad de generación de partículas.
-- **Comportamiento esperado:** La pantalla se llenaría más rápido de partículas, lo que podría provocar caos visual o una experiencia sobrecargada.
-- **Reflexión:** Podría ser interesante explorar un sistema adaptativo donde la velocidad de generación de partículas dependa del ritmo de la música o del nivel de interacción del usuario.
+**Escenario:**  
+El micrófono capta un pico extremo de amplitud (volumen muy alto y sostenido), mientras que el grupo activo en la ruleta está inactivo (no interactúa con su celular).
 
-### 3. Combinación de Inputs
-**Escenario:** ¿Cómo interactúan distintos inputs simultáneamente?
-- **Ejemplo:** El usuario cambia el color de las partículas al máximo brillo mientras la velocidad de movimiento también es alta.
-- **Comportamiento esperado:** Una combinación de colores extremadamente brillantes podría hacer que la pantalla luzca demasiado saturada o caótica.
-- **Reflexión:** Se podría implementar un sistema que suavice transiciones de color o que limite la combinación de ciertos parámetros para mantener una experiencia equilibrada.
+**Comportamiento esperado del algoritmo:**  
+- Las partículas reaccionarían con una intensidad visual muy alta: mayor velocidad, dispersión y explosión de color.
+- Sin datos del público, el sistema usaría los últimos valores registrados o un valor por defecto para los parámetros visuales (color y tamaño).
 
-### 4. Falla de Input
-**Escenario:** ¿Qué pasa si un input deja de enviar datos inesperadamente?
-- **Ejemplo:** La conexión con los dispositivos móviles de los usuarios se interrumpe.
-- **Comportamiento esperado:** Si no hay inputs de usuario, el sistema podría quedarse sin cambios visuales y perder interactividad.
-- **Reflexión:** Se podría establecer un estado por defecto en el que, si no hay interacciones por un tiempo determinado, el sistema active un modo automático con visualizaciones predefinidas.
+**¿Es deseable?:**  
+- **Sí, parcialmente.** Visualmente puede ser interesante si el sistema responde con dramatismo al clímax musical.  
+- **Pero:** Si no hay interacción del público en ese momento, se puede perder parte de la dimensión colaborativa de la experiencia.  
+**Posible ajuste:** Implementar una reacción visual alternativa más abstracta si no hay inputs activos del público, para mantener el dinamismo.
+
+## 2. Cambio de parámetro interno
+
+**Escenario:**  
+Duplicar la sensibilidad al volumen del audio en el proceso (por ejemplo, `visual_intensity = amplitude * 2`).
+
+**Comportamiento esperado del algoritmo:**  
+- El sistema respondería de forma mucho más agresiva a cualquier cambio de volumen: visuales más bruscos, partículas más caóticas, cambios de escena más abruptos.
+
+**¿Es deseable?:**  
+- **Depende del propósito narrativo.**  
+  - Para momentos climáticos puede ser positivo.  
+  - Pero durante partes suaves de la canción podría generar ruido visual innecesario.  
+**Posible ajuste:** Aplicar una curva de respuesta no lineal (por ejemplo, exponencial o logarítmica) para dar más control y evitar sobresaturación.
+
+
+## 3. Combinación de Inputs
+
+**Escenario:**  
+Grupo 1 activo con mucha interacción (cambio constante de color y tamaño), mientras el audio se encuentra en un pasaje suave y melódico.
+
+**Comportamiento esperado del algoritmo:**  
+- La visualización recibiría inputs visuales muy activos, pero los movimientos de partículas estarían controlados y lentos por la suavidad del audio.
+- Esto generaría una paradoja visual: cambios intensos de color/tamaño pero con partículas que se mueven lentamente y forman patrones delicados.
+
+**¿Es deseable?:**  
+- **Sí, potencialmente muy interesante.** Puede dar lugar a contrastes expresivos: la energía del público rompe con la calma del audio, revelando una tensión narrativa.  
+**Ajuste opcional:** Podría incorporarse una lógica que suavice o module los inputs del público en función del nivel de energía de la música para mantener coherencia (si se desea).
+
+## 4. Falla de Input
+
+**Escenario:**  
+El dispositivo de audio deja de enviar datos (fallo de micrófono o desconexión).
+
+**Comportamiento esperado del algoritmo:**  
+- Las partículas dejarían de responder al sonido.  
+- Si no se implementa un estado por defecto, podrían quedar inmóviles o congeladas, rompiendo la experiencia visual.
+
+**¿Es deseable?:**  
+- **No.** Una falla de audio no debe detener la experiencia visual completamente.  
+**Ajuste necesario:**  
+- Definir un **modo de respaldo** en el algoritmo:  
+  - Si no se detecta audio por más de X segundos, el sistema entra en un “modo automático” donde se genera una progresión visual con base en una curva predefinida o usando el ritmo de las interacciones del público.
+
+
+## Conclusión general
+
+Estos escenarios revelan que tu diseño es flexible y con mucho potencial expresivo, pero también muestran la importancia de:
+- Implementar **modos de respaldo** en caso de fallas.
+- Usar curvas o filtros para suavizar inputs extremos.
+- Explorar la riqueza narrativa de las **combinaciones inesperadas** de inputs.
