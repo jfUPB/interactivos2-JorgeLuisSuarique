@@ -1,16 +1,15 @@
-# Actividad 4.
-¡Perfecto! Vamos con la **Actividad 4: Plan de Simulación de Datos** basada en tu flujo IPO anterior:
+# Actividad 4  
+¡Perfecto! Vamos con la **Actividad 4: Plan de Simulación de Datos** basada en tu flujo IPO:
 
----
 
-## 🧪 **Plan de Simulación de Datos**
+## **Plan de Simulación de Datos**
 
 ### **1. Inputs a Simular**
 
-De acuerdo con el flujo IPO, los siguientes inputs requerirán simulación:
+De acuerdo con el diseño IPO, los siguientes inputs necesitarán simulación para pruebas y desarrollo:
 
-- Movimiento del usuario (acelerómetro/giroscopio)
-- Intensidad del sonido
+- **Amplitud del audio** (dinámica de la canción en vivo)  
+- **Selección de grupo activo** (ruleta para turnos de participación del público)
 
 ---
 
@@ -18,73 +17,76 @@ De acuerdo con el flujo IPO, los siguientes inputs requerirán simulación:
 
 | Input                        | Método | Detalles |
 |-----------------------------|--------|----------|
-| **Movimiento del usuario**  | `noise()` | Generar valores suaves y fluctuantes para X y Y entre -10 y 10. Usaré un incremento (`t += 0.01`) para mantener la continuidad del movimiento. Ejemplo: `let x = noise(t) * 20 - 10` |
-| **Intensidad del sonido**   | `random()` + picos esporádicos | Rango entre 30 y 80 dB como base, con picos simulados ocasionales entre 80 y 100. Ejemplo: `let intensidad = random(30, 80); if (frameCount % 60 === 0) intensidad = random(80, 100);` |
+| **Amplitud del audio**      | `noise()` + picos simulados | Se genera una señal suave entre 0.2 y 0.8 con `noise()` para simular variaciones musicales orgánicas. Se añaden picos ocasionales entre 0.8 y 1.0 para simular momentos de intensidad. |
+| **Selección de grupo activo** | alternancia temporal o botón manual | Cada 10 segundos se alterna automáticamente entre "Grupo 1" y "Grupo 2", o se puede cambiar manualmente con un botón HTML. |
 
 ---
 
-### **3. Comportamiento Simulado Esperado**
+## **3. Comportamiento Simulado Esperado**
 
-- **Movimiento del usuario:** Cambios suaves y naturales, como si el dispositivo se moviera lentamente en el espacio (ideal para probar efectos en partículas que reaccionan al movimiento).
-- **Intensidad del sonido:** Fluctuaciones comunes con picos ocasionales que simulan golpes fuertes o acentos musicales (útil para validar el aumento/disminución de partículas, velocidad o tamaño).
+- **Amplitud del audio:**  
+  Simula una canción con dinámica fluida: momentos suaves y picos marcados, como transiciones entre versos y coros. Ideal para probar reacciones visuales como aumento de cantidad o energía de partículas.
+
+- **Grupo activo (ruleta):**  
+  Cambios de grupo que permiten testear si las interacciones del público están correctamente limitadas o habilitadas en distintos momentos. Muy útil para validar la lógica condicional.
 
 ---
 
-### **4. Activación/Desactivación de Simulación**
+## **4. Activación/Desactivación de Simulación**
 
-Se usará una variable booleana `usarSimulacion` para poder activar o desactivar fácilmente la simulación durante pruebas o presentaciones en vivo. Ejemplo:
+Se implementará una variable global `usarSimulacion` para facilitar el cambio entre simulación y uso de datos reales:
 
 ```js
-if (usarSimulacion) {
-  // Simular datos
-} else {
-  // Usar datos reales
-}
-```
-```js
-// Variables para simulación
 let usarSimulacion = true;
-let t = 0; // Tiempo para noise
-let movimiento = { x: 0, y: 0, z: 0 };
-let intensidadSonido = 0;
+```
+
+Esto permitirá probar el algoritmo con datos artificiales al inicio y luego cambiar a los datos en vivo sin alterar la estructura principal del código.
+
+
+## Código de ejemplo en p5.js
+
+```js
+let usarSimulacion = true;
+let t = 0;
+let amplitud = 0;
+let grupoActivo = "Grupo 1";
 
 function setup() {
   createCanvas(600, 400);
+  textFont('monospace');
 }
 
 function draw() {
-  background(30);
+  background(10);
 
   if (usarSimulacion) {
-    // Simulación de movimiento con noise
-    movimiento.x = noise(t) * 20 - 10;
-    movimiento.y = noise(t + 100) * 20 - 10;
-    movimiento.z = noise(t + 200) * 20 - 10;
+    // Simular amplitud del audio
+    amplitud = noise(t) * 0.6 + 0.2;
+    if (frameCount % 120 === 0) {
+      amplitud = random(0.8, 1.0); // pico de intensidad
+    }
     t += 0.01;
 
-    // Simulación de intensidad de sonido con random + picos
-    intensidadSonido = random(30, 80);
-    if (frameCount % 60 === 0) {
-      intensidadSonido = random(80, 100); // Pico cada 60 frames
+    // Alternar grupo activo cada 10 segundos
+    if (frameCount % 600 === 0) {
+      grupoActivo = (grupoActivo === "Grupo 1") ? "Grupo 2" : "Grupo 1";
     }
-  } else {
-    // Aquí podrías insertar los datos reales si los tuvieras
   }
 
-  // Mostrar los valores simulados en pantalla
+  // Mostrar valores simulados
   fill(255);
   textSize(16);
-  text("Movimiento simulado:", 20, 30);
-  text("X: " + nf(movimiento.x, 1, 2), 40, 60);
-  text("Y: " + nf(movimiento.y, 1, 2), 40, 80);
-  text("Z: " + nf(movimiento.z, 1, 2), 40, 100);
+  text("Amplitud simulada: " + nf(amplitud, 1, 2), 20, 40);
+  text("Grupo activo: " + grupoActivo, 20, 70);
 
-  text("Intensidad de sonido sim.: " + nf(intensidadSonido, 1, 2) + " dB", 20, 140);
-
-  // Visualización simple de intensidad (círculo)
+  // Visualización básica (círculo pulsante según amplitud)
   noStroke();
-  fill(0, 150, 255, 180);
-  let size = map(intensidadSonido, 30, 100, 20, 200);
-  ellipse(width / 2, height / 2, size);
+  fill(100, 200, 255, 180);
+  let tam = map(amplitud, 0.2, 1.0, 50, 250);
+  ellipse(width / 2, height / 2, tam);
+
+  // Mostrar grupo activo con color
+  fill(grupoActivo === "Grupo 1" ? 'lime' : 'orange');
+  ellipse(width / 2, height - 60, 40);
 }
 ```
