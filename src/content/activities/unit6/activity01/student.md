@@ -1,22 +1,31 @@
 # Actividad 1.
 
-## BreVe Resumen de mi proyecto.
-Estoy creando una experiencia de arte generativo en la que los músicos promocionan su canción en vivo mientras el público interactúa desde sus dispositivos móviles. Las visualizaciones de partículas reaccionan a la música y a la participación del público, formando figuras inspiradas en la estética celta y la naturaleza. Esta fusión de sonido, arte y tecnología transforma cada presentación en una experiencia única e inmersiva.
+## Breve resumen del proyecto
 
-## Input.
-Datos de audio en tiempo real de la canción "Suck My Flute" de OMNIA (frecuencia, amplitud, ritmo).
-Interacciones del público a través de dispositivos móviles (toques y cambios de color o tamaño en la visualización).
+Estoy desarrollando una experiencia interactiva de arte generativo en tiempo real para un evento en vivo, donde los músicos presentan su canción "Suck My Flute" de OMNIA mientras el público interactúa desde sus dispositivos móviles. Las visualizaciones generativas responden al audio en vivo y a las acciones del público, formando figuras inspiradas en la estética celta y la naturaleza. Esta fusión entre sonido, participación y visuales transforma la presentación musical en una experiencia inmersiva única.
 
-## Process.
-Análisis de la señal de audio para extraer patrones relevantes como picos de frecuencia y cambios de ritmo.
-Interpretación de las interacciones del público y mapeo de sus elecciones a parámetros visuales.
-Generación de partículas y formación de patrones celtas y naturales en función de la música y las interacciones.
 
-## Output.
-Proyección en tiempo real de arte generativo con partículas que responden a la música y a la participación del público.
-Variación en la visualización dependiendo de la intensidad de la música y las modificaciones del espectador.
+## Método IPO aplicado al diseño algorítmico
 
-## Storytelling.
-La experiencia inicia con la canción y un paisaje visual en calma. A medida que la música evoluciona, las partículas comienzan a transformarse en patrones inspirados en la cultura celta y la naturaleza.
-La audiencia, con sus dispositivos móviles, se convierte en parte activa de la creación, influyendo en los colores, formas y movimientos de la visualización.
-Al final, la pieza musical y visual llegan a su clímax, dejando una impresión inmersiva y envolvente en los espectadores.
+**Input**  
+La experiencia recoge dos tipos principales de datos:  
+- El análisis en tiempo real del audio (frecuencia, amplitud y ritmo de la canción).  
+- Las interacciones del público desde sus celulares (toques en pantalla, cambios de color o tamaño en las partículas).  
+
+**Process**  
+El sistema interpreta estos datos para dar vida a la visualización.  
+- Extrae patrones sonoros relevantes como picos de frecuencia o cambios de ritmo.  
+- Mapea las decisiones del público (colores, intensidad, tamaño) a variables visuales.  
+- Genera partículas que se organizan en patrones dinámicos inspirados en la naturaleza y la iconografía celta.  
+
+**Output**  
+La salida es una proyección visual generativa en tiempo real que reacciona tanto al sonido como a la participación del público.  
+- Las partículas se transforman visualmente según la energía de la música y las decisiones colectivas del público.  
+- La proyección responde a los picos musicales, los cambios de ritmo y las intervenciones móviles, ofreciendo una experiencia audiovisual viva y cambiante.  
+
+**Storytelling**  
+La narrativa visual acompaña el desarrollo emocional de la canción.  
+- Inicia con un ambiente sereno y paisajes visuales suaves.  
+- A medida que la música se intensifica, los visuales evolucionan en formas más complejas e hipnóticas, con inspiración celta.  
+- El público es parte activa de esta transformación, interviniendo el paisaje visual a través de sus dispositivos.  
+- La pieza concluye en un clímax tanto sonoro como visual, dejando una impresión inmersiva y colectiva.
