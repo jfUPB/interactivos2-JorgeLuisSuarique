@@ -1,36 +1,44 @@
 let socket;
-let imgElement;
+let song;
+let amplitude;
+let usarSimulacion = true;
+let simulatedValue = 0;
+
+function preload() {
+  song = loadSound('assets/tu_cancion.mp3'); // Asegúrate de poner bien la ruta
+}
 
 function setup() {
-    createCanvas(400, 400);
-    background(220);
+  createCanvas(400, 400);
+  background(0);
 
-    // Intentar conectar con el servidor
-    socket = io.connect('http://127.0.0.1:3000', { transports: ['websocket', 'polling'] });
+  socket = io.connect('http://localhost:3000');
+  
+  amplitude = new p5.Amplitude();
 
-    // Confirmar conexión en consola
-    socket.on('connect', () => {
-        console.log('✅ Conectado al servidor:', socket.id);
-    });
+  // Reproducir canción automáticamente
+  song.play();
+}
 
-    socket.on('disconnect', () => {
-        console.log('❌ Desconectado del servidor');
-    });
+function draw() {
+  background(0);
 
-    socket.on('connect_error', (error) => {
-        console.error('⚠️ Error de conexión:', error);
-    });
+  let level;
+  if (usarSimulacion) {
+    // Simulación con valores aleatorios suaves
+    simulatedValue = noise(frameCount * 0.05) * 100;
+    level = simulatedValue;
+  } else {
+    level = amplitude.getLevel() * 500; // escalar para mejor efecto
+  }
 
-    // Crear un elemento para mostrar la imagen recibida
-    imgElement = createImg('', 'Imagen recibida');
-    imgElement.position(10, 50);
-    imgElement.size(300, 300);
-    imgElement.hide();
+  // Visual simple
+  fill(255);
+  ellipse(width / 2, height / 2, level, level);
 
-    // Escuchar la imagen enviada desde Mobile
-    socket.on('image', (data) => {
-        console.log('📸 Imagen recibida');
-        imgElement.elt.src = data;
-        imgElement.show();
-    });
+  // Enviar valor al móvil
+  socket.emit('audioLevel', level);
+
+  // Verificación por consola
+  console.log('🔊 Nivel de audio enviado:', level.toFixed(2));
 }
