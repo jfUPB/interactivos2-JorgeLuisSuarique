@@ -5,11 +5,50 @@ unitId: unit6
 
 import ActivityPlaceholder from '../../../components/ActivityPlaceholder.astro';
 import unidades from '../../activities/unidades.json';
+import { Aside} from '@astrojs/starlight/components';
+
 
 export const unit = unidades.find(u => u.nombre === frontmatter.title);
 
+## Introducción 📜
 
-## ¿Qué aprenderás en esta unidad?
+<Aside type="note" title="Diseñando el corazón generativo">
+
+En la unidad anterior, diste forma al **concepto**, la 
+**narrativa** y el **diseño preliminar** de tu experiencia interactiva para un 
+evento en vivo. Ahora, nos adentramos en el núcleo de tu creación: 
+el **diseño detallado del algoritmo generativo**.
+
+En esta unidad, no escribiremos el código final (¡Eso es para la Unidad 7!), pero sí
+ definiremos la **lógica fundamental** que dará vida a tu pieza de arte. Usaremos el 
+ método **Input-Process-Output (IPO)**, que exploraste en la Unidad 2, como 
+ nuestra brújula. Nos enfocaremos en especificar con precisión cómo los **Inputs** 
+ (datos reales o simulados del evento) serán transformados por el 
+ **Proceso** (tu algoritmo) para generar los **Outputs** (efectos visuales/sonoros), 
+ todo conectado por el **Storytelling** de tu proyecto.
+
+El objetivo es crear un **plano detallado del algoritmo**, una guía clara que capture 
+la esencia de cómo tu pieza responderá dinámicamente a su entorno. ¡Vamos a diseñar 
+el alma de tu experiencia interactiva!
+</Aside>
+
+## ¿Qué aprenderás en esta unidad? 💡
+
+<Aside type="tip" title="Objetivos de aprendizaje">
+Al finalizar esta unidad, serás capaz de:
+- Aplicar de manera detallada el método Input-Process-Output (IPO) al diseño específico 
+de tu proyecto de arte generativo.
+- Definir con precisión los inputs (datos de entrada) para tu sistema generativo, 
+considerando el contexto del evento en vivo y la necesidad potencial de simulación.
+- Diseñar y describir el algoritmo central (Proceso) que transformará los inputs en 
+outputs dinámicos, especificando sus reglas y lógica generativa.
+- Especificar las características de los outputs (visuales, sonoros, etc.) y cómo 
+reflejan la narrativa y responden a los inputs.
+- Integrar de forma coherente el flujo IPO con el storytelling y el concepto general de tu proyecto.
+- Experimentar conceptualmente con variaciones y comportamientos de tu algoritmo diseñado.
+- Documentar tu diseño algorítmico de forma clara y estructurada (Blueprint).
+- Evaluar la viabilidad conceptual de tu diseño y planificar los primeros pasos de la implementación.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "set")
@@ -21,7 +60,15 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Investigación
+## Investigación 🔎
+
+<Aside type="note" title="Definiendo el flujo IPO">
+Es momento de usar el método IPO para darle estructura a tu algoritmo. 
+Detallaremos qué información entra, cómo se procesa y qué resulta, asegurando que 
+todo esté alineado con tu visión conceptual y narrativa.
+</Aside>
+
+
 
 {unit.actividades
   .filter(act => act.fase === "seek")
@@ -33,7 +80,12 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Aplicación
+## Aplicación 🛠
+
+<Aside type="note" title="Explorando y preparando">
+Con el diseño IPO base definido, vamos a explorar sus límites conceptuales y a 
+preparar los detalles prácticos para la implementación, especialmente si necesitas simular datos.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "apply")
@@ -45,7 +97,12 @@ export const unit = unidades.find(u => u.nombre === frontmatter.title);
   ))
 }
 
-## Consolidación y matacognión
+## Consolidación y metacognición 🤔
+
+<Aside type="note" title="Sintetizando y mirando hacia adelante">
+Has diseñado el algoritmo. Ahora, consolidaremos ese diseño, evaluaremos nuestro 
+trabajo y planificaremos los siguientes pasos hacia la implementación en la Unidad 7.
+</Aside>
 
 {unit.actividades
   .filter(act => act.fase === "reflect")

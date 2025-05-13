@@ -1,0 +1,7 @@
+# Actividad 8.
+## ¿Cómo se conecta todo lo anterior con el proyecto de curso?.
+Esto se conecta definitivamente tanto con la parte de investigación como con la implementación. Dicho en la implementación de esta fase en las aplicaciones interactivas, refleja la importancia de integrar conocimientos teóricos y prácticos para resolver problemas complejos. La investigación permite comprender los fundamentos de las comunicaciones inalámbricas, los protocolos híbridos y las técnicas de programación multihilo, mientras que la implementación exige aplicar estos conceptos de manera autónoma y creativa para materializar soluciones funcionales.
+
+Este enfoque no solo fortalece las competencias técnicas, sino que también fomenta el pensamiento crítico y la capacidad de tomar decisiones estratégicas. Al enfrentar un problema, no se trata solo de seguir instrucciones, sino de evaluar las herramientas y técnicas disponibles para seleccionar las más adecuadas según el contexto. Este nivel autónomo de desarrollo, que el curso promueve, es esencial en el mundo profesional, donde los desafíos rara vez vienen con un manual de soluciones predefinidas.
+
+Además, la publicación de la aplicación en un repositorio público no solo contribuye al portafolio personal, sino que también fomenta la colaboración y el intercambio de conocimiento en la comunidad de desarrollo. Esto subraya la importancia de no solo crear soluciones efectivas, sino también compartirlas y documentarlas de manera que puedan ser replicadas o mejoradas por otros.
